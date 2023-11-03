@@ -16,6 +16,8 @@ function App() {
       i = setInterval(() => {
         setSeconds((prev) => prev + 1);
       }, 1000);
+    } else {
+      clearInterval(i);
     }
 
     return () => {
@@ -47,6 +49,14 @@ function App() {
           className="button"
         >
           START
+        </button>
+        <button
+          onClick={() => {
+            setStart((start) => !start);
+          }}
+          className="button"
+        >
+          STOP
         </button>
         <button onClick={handleStop} className="button">
           RESET
