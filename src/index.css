@@ -1,0 +1,33 @@
+body {
+  height: 100%;
+  background-color: rgb(35, 70, 70);
+}
+
+.main-heading {
+  text-align: center;
+  color: white;
+  padding: 1.5rem;
+  border: 5px solid whitesmoke;
+  width: 60%;
+  margin: 1rem auto;
+  font-size: 35px;
+}
+
+.buttons {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.button {
+  padding: 0.5rem;
+  font-weight: bolder;
+  background-color: aqua;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.button:hover {
+  background-color: goldenrod;
+}
