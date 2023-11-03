@@ -5,6 +5,14 @@ function App() {
   const [seconds, setSeconds] = useState(0);
   const [start, setStart] = useState(false);
 
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const remainingSeconds = seconds % 60;
+
+  const formattedHours = hours.toString().padStart(2, "0");
+  const formattedMinutes = minutes.toString().padStart(2, "0");
+  const formattedSeconds = remainingSeconds.toString().padStart(2, "0");
+
   function handleStop() {
     setSeconds(0);
     setStart((start) => !start);
@@ -27,20 +35,7 @@ function App() {
   return (
     <div className="main-heading">
       <h1>STOPWATCH</h1>
-      <p>
-        {Math.floor(seconds / 3600) === 0
-          ? `00`
-          : Math.floor(seconds / 3600) > 0 && Math.floor(seconds / 3600) < 10
-          ? `0${Math.floor(seconds / 3600)}`
-          : Math.floor(seconds / 3600)}
-        :
-        {Math.floor(seconds / 60) === 0
-          ? `00`
-          : Math.floor(seconds / 60) > 0 && Math.floor(seconds / 60) < 10
-          ? `0${Math.floor(seconds / 60)}`
-          : Math.floor(seconds / 60)}
-        :{seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60}
-      </p>
+      <p>{`${formattedHours}:${formattedMinutes}:${formattedSeconds}`}</p>
       <div className="buttons">
         <button
           onClick={() => {
