@@ -15,7 +15,7 @@ function App() {
 
   function handleStop() {
     setSeconds(0);
-    setStart((start) => !start);
+    setStart(false);
   }
 
   useEffect(() => {
